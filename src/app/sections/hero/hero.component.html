@@ -1,18 +1,47 @@
-<section class="max-w-6xl m-auto mb-20 flex gap-4">
-    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-gruvbox-green-2 flex-10/12">
-      <h2 class="text-4xl font-bold text-gruvbox-gray mb-4">
-        Hola, soy <span class="text-gruvbox-green">Facundo Pidal</span>
-      </h2>
-      <p class="text-gruvbox-gray-2 text-lg mb-6 max-w-2xl">
-          Desarrollador Web.
+<section class="max-w-4xl m-auto mb-20 grid gap-4 grid-cols-1 sm:grid-cols-2">
+  <article class="bg-white dark:bg-[#181818] rounded-2xl p-8 shadow-lg border-t-4 sm:border-t-0 sm:border-l-4 border-secondary-2 dark:border-dark-secondary-2">
+    <h1 class="text-4xl font-bold text-fg dark:text-dark-fg mb-4">
+      Hola, soy <span class="text-secondary dark:text-dark-secondary">Facundo Pidal</span>
+    </h1>
+    <p class="text-fg-2 dark:text-dark-fg-2 text-lg mb-6 max-w-2xl">
+      Desarrollador Web.
+    </p>
+    <footer class="flex justify-evenly sm:justify-start dark:invert">
+      <a
+        href="https://github/facundopidal"
+        class="inline-block w-max"
+        title="Ir a GitHub"
+      >
+        <img src="icons/github-mark.svg" alt="ir a GitHub" class="h-10 rounded-full hover:scale-115 transition-all transform bg-white">
+      </a>
+      <a 
+        href="https://linkedin.com/in/facundopidal" 
+        class="inline-block sm:hidden w-max"
+        title="Ir a LinkedIn"
+      > 
+        <img src="icons/linkedin.png" alt="" class="h-10 hover:scale-115 transition-all transform">
+      </a>
+    </footer>
+  </article>
+  <article class="bg-white dark:bg-[#181818] rounded-2xl p-8 shadow-lg border-b-4 sm:border-b-0 sm:border-r-4 border-secondary-2 dark:border-dark-secondary-2 flex flex-col justify-between">
+    <header>
+      <!-- La imagen UTN es dudosa -->
+      <img src="icons/logo-utn.png" alt="UTN" class="h-7 dark:invert"> 
+      <p class="text-fg dark:text-dark-fg text-lg font-semibold lg:w-max">
+        <span class="text-3xl align-sub">🎓</span> Técnico Universitario en Programación
       </p>
-      <button class="bg-gruvbox-yellow hover:bg-gruvbox-yellow-2 text-white px-6 py-3 rounded-lg transition-all transform hover:scale-105">
-        Ver proyectos destacados
-      </button>
-    </div>
-    <div class="bg-white rounded-2xl p-8 shadow-lg border-r-4 border-gruvbox-green-2">
-      <h3 class="text-3xl font-extrabold text-gruvbox-green">{{currentTime}}</h3>
-      
-      
-    </div>
-  </section>
+       <p class="text-fg-2 dark:text-dark-fg-2 text-sm font-semibold pl-3 sm:pl-4 pt-3">
+        Universidad Tecnológica Nacional - Facultad Regional Mar del Plata - Feb 2025
+       </p>
+    </header>
+     <footer class="flex justify-end">
+        <a 
+          href="https://linkedin.com/in/facundopidal" 
+          class="hidden sm:inline-block w-max" 
+          title="Ir a LinkedIn"
+        > 
+          <img src="icons/linkedin.png" alt="Ir a LinkedIn" class="h-10 hover:scale-115 transition-all transform dark:invert">
+        </a>
+     </footer>
+  </article>
+</section>

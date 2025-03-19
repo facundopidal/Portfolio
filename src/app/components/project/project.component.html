@@ -1,19 +1,19 @@
-<article class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-    <div class="h-48 bg-sky-100 rounded-lg mb-4"></div>
-    <h4 class="text-xl font-semibold text-gray-800 mb-2">{{project().name}}</h4>
-    <p class="text-gray-500 mb-4">{{project().description}}</p>
+<article class="bg-white dark:bg-[#181818] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+    <div class="h-48 bg-sky-100 dark:bg-gray-900 rounded-lg mb-4"></div>
+    <h4 class="text-xl font-semibold text-secondary dark:text-dark-secondary mb-2">{{project().name}}</h4>
+    <p class="text-fg dark:text-dark-fg mb-4">{{project().description}}</p>
     <div class="flex justify-between items-center">
         <div class="flex gap-2 items-center">
           @for(tec of project().technologies; track $index) {
             <div class="flex flex-col items-center">
               <img src="icons/{{tec}}.png" alt="{{tec}}" class="h-6">
-              <span class="rounded-2xl" > {{tec}} </span>
+              <span class="rounded-2xl text-fg-2 dark:text-dark-fg-2" > {{tec}} </span>
             </div>
           }
         </div>
         <div>
           @if(project().github) {
-            <a [href]="project().github" target="_blank" class="hover:scale-105 transition-all"><img src="icons/github-mark.svg" alt="Go to repositorie" class="h-10"></a>
+            <a [href]="project().github" target="_blank" class="hover:scale-105 transition-all"><img src="icons/github-mark.svg" alt="Go to repositorie" class="h-10 dark:invert"></a>
           }
         </div>
     </div>

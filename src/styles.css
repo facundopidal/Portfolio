@@ -1,29 +1,25 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-   --color-gruvbox-bg: #fbf1c7;
-    --color-gruvbox-gray: #282828;
+    --color-primary: #fbf1c7;
+    --color-secondary: #98971a;  
+    --color-secondary-2: #79740e;   
+    --color-fg: #282828;
+    --color-fg-2: #504945;   
+    --color-tertiary: #d79921; 
+    --color-tertiary-2: #b57614;  
     --color-gruvbox-red: #cc241d;
-    --color-gruvbox-green: #98971a;  
-    --color-gruvbox-yellow: #d79921; 
-    --color-gruvbox-bg-2: #ebdbb2;
-    --color-gruvbox-gray-2: #504945;   
     --color-gruvbox-red-2: #9d0006;
-    --color-gruvbox-green-2: #79740e;   
-    --color-gruvbox-yellow-2: #b57614;  
+
+    --color-dark-primary: #1e071b;
+    --color-dark-secondary: #8c97b3;
+    --color-dark-secondary-2: #492a54;  
+    --color-dark-fg: #ddd;
+    --color-dark-fg-2: #a190b1;   
+    --color-dark-tertiary: #ebf5ad; 
+    --color-dark-tertiary-2: #ebf5adaa; 
 }
 
-/* @media(prefers-color-scheme: dark) {
-    @theme {
-      --color-gruvbox-bg: #282828;
-      --color-gruvbox-gray: #fbf1c7;
-      --color-gruvbox-red: #fb4934;
-      --color-gruvbox-green: #b8bb26;  
-      --color-gruvbox-yellow: #fabd2f; 
-      --color-gruvbox-bg-2: #3c3836;
-      --color-gruvbox-gray-2: #d5c4a1;   
-      --color-gruvbox-red-2: #cc241d;
-      --color-gruvbox-green-2: #98971a;   
-      --color-gruvbox-yellow-2: #d79921;  
-    }
-} */
+
