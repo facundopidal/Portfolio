@@ -1,0 +1,4 @@
+header.scrolled {
+  padding-top: calc(var(--spacing) * 3);
+  transition: all 0.3s ease-in-out;
+}

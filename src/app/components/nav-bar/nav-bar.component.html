@@ -1,9 +1,37 @@
-<header class="backdrop-blur-xs max-w-5xl mx-auto sticky top-0 z-10 pt-5 rounded-b-4xl">
-    <nav class="bg-white dark:bg-[#181818] shadow-md rounded-full px-8 py-4 mb-12 max-w-5xl mx-auto">
-        <div class="flex justify-evenly font-semibold">
-            <a href="#" class="text-tertiary hover:text-tertiary-2 hover:scale-110 transition-all">Sobre mí</a>
-            <a href="#" class="text-tertiary hover:text-tertiary-2 hover:scale-110 transition-all">Experiencia</a>
-            <a href="#" class="text-tertiary hover:text-tertiary-2 hover:scale-110 transition-all">Contacto</a>
+<header class="backdrop-blur-md max-w-4xl mx-auto sticky top-0 z-10 pt-5 rounded-b-4xl pb-6 mb-6"
+    [class.scrolled]="isScrolled">
+    <nav class="bg-white dark:bg-[#181818] shadow-md rounded-full px-8 py-4 max-w-5xl mx-auto flex items-center justify-center border-[1px] gap-4 sm:gap-0 border-secondary dark:border-dark-secondary">
+    <!-- Botón de menú para móvil -->
+        <button class="sm:hidden text-secondary dark:text-dark-secondary focus:outline-none self-stretch" (click)="isMobileMenuOpen = !isMobileMenuOpen">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            @if(isMobileMenuOpen){
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            }
+            @else {
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />
+            }
+            </svg>
+        </button>
+
+        <!-- Menú principal -->
+        <div class="flex-1 hidden sm:flex justify-evenly font-semibold self-stretch">
+            <a href="#" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Inicio</a>
+            <a href="#about-me" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Sobre mí</a>
+            <a href="#projects" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Proyectos</a>
+            <a href="#contact" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Contacto</a>
         </div>
+
+        <!-- Menú móvil -->
+        @if(isMobileMenuOpen) {
+
+            <div class="absolute top-full left-0 w-full bg-white dark:bg-[#181818] shadow-md rounded-b-lg sm:hidden">
+                <a href="#" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Inicio</a>
+                <a href="#about-me" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Sobre mí</a>
+                <a href="#projects" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Proyectos</a>
+                <a href="#contact" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Contacto</a>
+            </div>
+        }
+        
+        <app-theme-switch />
     </nav>
 </header>

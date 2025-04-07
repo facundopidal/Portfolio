@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { ThemeSwitchComponent } from "../theme-switch/theme-switch.component";
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [],
+  imports: [ThemeSwitchComponent],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+  isScrolled = false;
+  isMobileMenuOpen = false;
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
 }
