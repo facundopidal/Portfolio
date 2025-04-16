@@ -1,4 +1,4 @@
-# Portfolio v2
+# Portfolio
 
 ¡Bienvenido a mi portafolio! Este proyecto muestra mis habilidades, proyectos y experiencia como desarrollador.
 
