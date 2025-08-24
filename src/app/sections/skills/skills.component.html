@@ -1,13 +1,13 @@
 <section id="skills" class="max-w-4xl mx-auto mb-20 scroll-mt-20">
-  <h3 class="text-2xl font-bold text-fg dark:text-dark-fg mb-8">Habilidades Técnicas</h3>
+  <h2 class="text-2xl font-bold text-fg dark:text-dark-fg mb-8 text-center">Habilidades Técnicas</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto">
     @for (category of skillsEntries; track category[0]) {
       <div class="bg-white dark:bg-[#181818] p-6 rounded-xl text-center shadow-sm border-t-4 border-secondary dark:border-dark-secondary flex flex-col items-center max-w-[360px]">
-        <span class="text-fg-2 dark:text-dark-fg-2 font-semibold mt-2 capitalize">{{ category[0] }}</span>
+        <h3 class="text-lg font-semibold mt-2 capitalize text-secondary dark:text-dark-secondary">{{ category[0] }}</h3>
         <div class="grid grid-cols-2 gap-4 mt-4">
           @for (skill of category[1]; track skill.id) {
             <div class="flex flex-col items-center">
-              <img [src]="'icons/' + skill.id + '.png'" [alt]="skill.name" class="h-10 w-10 mb-2" />
+              <img [src]="'icons/' + skill.id + '.webp'" [alt]="skill.name" class="h-10 w-10 mb-2" />
               <span class="text-sm text-fg-2 dark:text-dark-fg-2">{{ skill.name }}</span>
             </div>
           }

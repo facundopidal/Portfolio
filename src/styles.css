@@ -1,38 +1,16 @@
-@import "tailwindcss";
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-    --color-primary: #fbf1c7;
-    --color-secondary: #98971a;  
-    --color-secondary-2: #79740e;   
-    --color-fg: #282828;
-    --color-fg-2: #504945;   
-    --color-tertiary: #d79921; 
-    --color-tertiary-2: #b57614;  
-    --color-gruvbox-red: #cc241d;
-    --color-gruvbox-red-2: #9d0006;
-
-    --color-dark-primary: #1e071b;
-    --color-dark-secondary: #8c97b3;
-    --color-dark-secondary-2: #492a54;  
-    --color-dark-fg: #ddd;
-    --color-dark-fg-2: #a190b1;   
-    --color-dark-tertiary: #ebf5ad; 
-    --color-dark-tertiary-2: #ebf5adaa; 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
-
-@utility fade-in{
-    animation: fadeIn ease-in-out 0.5s;
-    -webkit-animation: fadeIn ease-in-out 0.5s;
-    -moz-animation: fadeIn ease-in-out 0.5s;
-    -o-animation: fadeIn ease-in-out 0.5s;
-    -ms-animation: fadeIn ease-in-out 0.5s;
-}
-
-@keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
-
-

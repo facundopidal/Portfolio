@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { skills } from '../../data/skills';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
-  skillsEntries = Object.entries(skills);
+  readonly skillsEntries = Object.entries(skills);
 }

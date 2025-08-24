@@ -2,7 +2,12 @@
     [class.scrolled]="isScrolled">
     <nav class="bg-white dark:bg-[#181818] shadow-md rounded-full px-8 py-4 max-w-5xl mx-auto flex items-center justify-around border-[1px] gap-4 sm:gap-0 border-secondary dark:border-dark-secondary">
     <!-- Botón de menú para móvil -->
-        <button class="sm:hidden text-secondary dark:text-dark-secondary focus:outline-none" (click)="isMobileMenuOpen = !isMobileMenuOpen">
+        <button
+            class="sm:hidden text-secondary dark:text-dark-secondary focus:outline-none"
+            (click)="isMobileMenuOpen = !isMobileMenuOpen"
+            aria-label="Abrir menú de navegación"
+            [attr.aria-expanded]="isMobileMenuOpen"
+            aria-controls="mobile-menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             @if(isMobileMenuOpen){
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -15,7 +20,7 @@
 
         <!-- Menú principal -->
         <div class="flex-1 hidden sm:flex justify-evenly font-semibold self-stretch">
-            <a href="#" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Inicio</a>
+            <a href="/" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Inicio</a>
             <a href="#about-me" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Sobre mí</a>
             <a href="#projects" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Proyectos</a>
             <a href="#skills" class="text-secondary dark:text-dark-secondary hover:text-secondary-2 hover:dark:text-dark-secondary-2 hover:scale-110 transition-all">Habilidades</a>
@@ -24,8 +29,8 @@
         <!-- Menú móvil -->
         @if(isMobileMenuOpen) {
 
-            <div class="absolute top-full left-0 w-full bg-white dark:bg-[#181818] shadow-md rounded-b-lg sm:hidden">
-                <a href="#" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Inicio</a>
+            <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white dark:bg-[#181818] shadow-md rounded-b-lg sm:hidden">
+                <a href="/" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Inicio</a>
                 <a href="#about-me" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Sobre mí</a>
                 <a href="#projects" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Proyectos</a>
                 <a href="#skills" class="block px-4 py-2 text-secondary dark:text-dark-secondary hover:bg-gray-100 dark:hover:bg-gray-800">Habilidades</a>

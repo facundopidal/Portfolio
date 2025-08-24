@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ProjectComponent } from '../../components/project/project.component';
 import { projects } from '../../data/projects';
 import { Project } from '../../types/project';
 
 @Component({
   selector: 'app-projects',
+  standalone: true,
   imports: [ProjectComponent],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent {
- projects: Project[] = projects
+  readonly projects: Project[] = projects
 }

@@ -1,11 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { ThemeSwitchComponent } from "../theme-switch/theme-switch.component";
 
 @Component({
   selector: 'app-nav-bar',
+  standalone: true,
   imports: [ThemeSwitchComponent],
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavBarComponent {
   isScrolled = false;
