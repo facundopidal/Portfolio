@@ -1,17 +1,30 @@
-# Portfolio
+# Astro Starter Kit: Portfolio
 
-¡Bienvenido a mi portafolio! Este proyecto muestra mis habilidades, proyectos y experiencia como desarrollador.
+```sh
+bun create astro@latest -- --template portfolio
+```
 
-## Tecnologías Utilizadas
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
 
-- **HTML5**: Para la estructura semántica del sitio web.
-- **CSS3**: Para los estilos y diseño visual.
-- **TypeScript**: Para añadir interactividad y lógica.
-- **Frameworks/Librerías**: Angular y Tailwind CSS para desarrollo eficiente y diseño moderno.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Contacto
+![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
 
-- **Correo**: facundopidalruizdiaz@gmail.com
-- **LinkedIn**: [Facundo Pidal](https://linkedin.com/in/facundopidal)
+## 🧞 Commands
 
-¡Gracias por visitar mi portafolio!
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `bun install`             | Installs dependencies                            |
+| `bun dev`             | Starts local dev server at `localhost:4321`      |
+| `bun build`           | Build your production site to `./dist/`          |
+| `bun preview`         | Preview your build locally, before deploying     |
+| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `bun astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

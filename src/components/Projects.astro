@@ -1,0 +1,138 @@
+---
+import { projects } from "../data/projects.ts";
+---
+
+<section class="py-20 px-4 bg-light-bg dark:bg-dark-bg fade-in-section">
+    <h2
+        class="text-4xl font-bold text-center text-light-text dark:text-dark-text"
+    >
+        Proyectos
+    </h2>
+    <div class="mt-12 text-light-text dark:text-dark-text flex flex-col gap-16">
+        {
+            projects.map((project) => (
+                <div class="flex flex-col sm:flex-row max-w-4xl mx-auto overflow-hidden group">
+                    <div class="max-w-96">
+                        <div class="animated-border-box">
+                            {project.image && (
+                                <img
+                                    src={`${project.image}`}
+                                    alt={project.name}
+                                    class="rounded-md"
+                                />
+                            )}
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">{project.name}</h3>
+                        <p class="mt-2 text-light-secondary dark:text-dark-secondary">
+                            {project.description}
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            {project.technologies.map((tech) => (
+                                <span class="flex items-center gap-1.5">
+                                    <img
+                                        src={`/icons/${tech.id}.png`}
+                                        alt={tech.name}
+                                        class="w-6 h-6"
+                                    />
+                                    <span class="bg-light-secondary/10 dark:bg-dark-secondary/10 text-xs font-semibold px-2.5 py-1 rounded-full">
+                                        {tech.name}
+                                    </span>
+                                </span>
+                            ))}
+                        </div>
+                        <div class="flex items-center mt-4">
+                            {project.url && (
+                                <a
+                                    href={project.url}
+                                    class="inline-block text-light-accent dark:text-dark-accent font-bold py-2 px-4 rounded hover:scale-110 transition-transform"
+                                    title="Ir al Proyecto"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="24px"
+                                        viewBox="0 -960 960 960"
+                                        width="24px"
+                                        class="fill-light-text dark:fill-dark-text"
+                                    >
+                                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+                                    </svg>
+                                </a>
+                            )}
+                            {project.download && (
+                                <a
+                                    href={project.download}
+                                    class="inline-block bg-light-accent text-light-bg dark:bg-dark-accent dark:text-dark-bg font-bold py-2 px-4 rounded hover:opacity-90 ml-2"
+                                >
+                                    Descargar
+                                </a>
+                            )}
+                            {project.github && (
+                                <a href={project.github} class="ml-auto">
+                                    <img
+                                        src="icons/github-mark.svg"
+                                        alt="GitHub"
+                                        class="h-8 w-8 hover:scale-110 transition-all dark:invert"
+                                        title="Ir al repositorio"
+                                    />
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    @property --angle {
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+
+    .animated-border-box {
+        --border-width: 2px;
+        --gradient-speed: 4s;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+
+        /* The gradient is the background */
+        background-image: conic-gradient(
+            from var(--angle) at 50% 50%,
+            transparent 80%,
+            var(--color-light-accent)
+        );
+
+        /* Use padding to create the border space */
+        padding: var(--border-width);
+
+        animation: rotate var(--gradient-speed) linear infinite;
+    }
+
+    /* The actual image needs a background to hide the gradient behind it */
+    .animated-border-box img {
+        background-color: var(--color-light-bg);
+    }
+
+    :global(.dark) .animated-border-box {
+        /* The gradient is the background */
+        background-image: conic-gradient(
+            from var(--angle) at 50% 50%,
+            transparent 80%,
+            var(--color-dark-accent)
+        );
+    }
+    :global(.dark) .animated-border-box img {
+        background-color: var(--color-dark-bg);
+    }
+
+    @keyframes rotate {
+        to {
+            --angle: 360deg;
+        }
+    }
+</style>

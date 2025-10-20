@@ -1,0 +1,60 @@
+---
+import "@styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Facundo Pidal</title>
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      function setupFadeInObserver() {
+        const sections = document.querySelectorAll('.fade-in-section');
+        
+        if (sections.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+        });
+
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      }
+
+      // Run on initial page load
+      setupFadeInObserver();
+
+      // Run on subsequent page transitions in Astro
+      document.addEventListener('astro:after-swap', setupFadeInObserver);
+    </script>
+  </body>
+</html>
