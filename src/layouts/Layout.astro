@@ -28,33 +28,6 @@ import "@styles/global.css";
   </head>
   <body>
     <slot />
-    <script>
-      function setupFadeInObserver() {
-        const sections = document.querySelectorAll('.fade-in-section');
-        
-        if (sections.length === 0) return;
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-        });
-
-        sections.forEach(section => {
-          observer.observe(section);
-        });
-      }
-
-      // Run on initial page load
-      setupFadeInObserver();
-
-      // Run on subsequent page transitions in Astro
-      document.addEventListener('astro:after-swap', setupFadeInObserver);
-    </script>
+    
   </body>
 </html>

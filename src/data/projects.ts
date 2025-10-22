@@ -5,17 +5,19 @@ export const projects: Project[] = [
     id: 4,
     name: "Multi WhatsApp",
     description:
-      "Aplicación de escritorio para gestionar múltiples cuentas de WhatsApp de forma centralizada, construida con un stack moderno y enfocada en el rendimiento.",
+      "Aplicación de escritorio para gestionar múltiples cuentas de WhatsApp de forma centralizada. Cuenta con una landing page informativa y un sistema de gestión de licencias desarrollado con Express y PostgreSQL.",
     technologies: [
       { id: "html", name: "HTML" },
-      { id: "css", name: "CSS" },
       { id: "tailwind", name: "Tailwind CSS" },
       { id: "typescript", name: "TypeScript" },
       { id: "angular", name: "Angular" },
       { id: "tauri", name: "Tauri" },
       { id: "rust", name: "Rust" },
+      { id: "express", name: "Express" },
+      { id: "postgres", name: "PostgreSQL" },
     ],
     image: "/images/multiw.png",
+    url: "https://multiwa.netlify.app",
     download:
       "https://github.com/facundopidal/MW-Updates/raw/refs/heads/main/downloads/Multi%20WhatsApp_0.1.9_x64_en-US.msi",
   },
@@ -26,12 +28,12 @@ export const projects: Project[] = [
       "Aplicación full-stack para gestionar notas con autenticación JWT. Cada usuario puede organizar sus notas y grupos de notas, utilizando un web component para edición en Markdown.",
     technologies: [
       { id: "html", name: "HTML" },
-      { id: "css", name: "CSS" },
       { id: "tailwind", name: "Tailwind CSS" },
       { id: "typescript", name: "TypeScript" },
       { id: "angular", name: "Angular" },
       { id: "nestjs", name: "NestJS" },
       { id: "postgres", name: "PostgreSQL" },
+      { id: "docker", name: "Docker" },
     ],
     image: "images/noteapp.png", // Placeholder image
     url: "https://noteapp-facundopidal.netlify.app",

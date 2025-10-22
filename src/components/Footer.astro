@@ -1,23 +1,32 @@
 ---
-const currentYear = new Date().getFullYear();
+
 ---
 
 <footer
-  class="py-8 text-center bg-light-bg dark:bg-dark-bg text-light-secondary dark:text-dark-secondary border-t border-light-secondary/20 dark:border-dark-secondary/20"
+  id="contact"
+  class="py-12 px-4 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
 >
-  <p>&copy; {currentYear} Facundo Pidal</p>
-  <div class="mt-4 flex justify-center space-x-4">
-    <a
-      href="mailto:facundopidalruizdiaz@gmail.com"
-      class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">Email</a
-    >
-    <a
-      href="https://github.com/facundopidal"
-      class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">GitHub</a
-    >
-    <a
-      href="https://linkedin.com/in/facundopidal"
-      class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">LinkedIn</a
-    >
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold">Contacto</h2>
+    <p class="mt-4 text-lg text-light-secondary dark:text-dark-secondary">
+      Puedes contactarme a través de los siguientes enlaces:
+    </p>
+    <div class="mt-4 flex justify-center space-x-4">
+      <a
+        href="mailto:facundopidalruizdiaz@gmail.com"
+        class="hover:text-secondary dark:hover:text-dark-secondary">Email</a
+      >
+      <a
+        href="https://github.com/facundopidal"
+        class="hover:text-secondary dark:hover:text-dark-secondary">GitHub</a
+      >
+      <a
+        href="https://linkedin.com/in/facundopidal"
+        class="hover:text-secondary dark:hover:text-dark-secondary">LinkedIn</a
+      >
+    </div>
+    <p class="mt-8 text-sm text-light-secondary dark:text-dark-secondary">
+      &copy; {new Date().getFullYear()} Facundo Pidal. Todos los derechos reservados.
+    </p>
   </div>
 </footer>

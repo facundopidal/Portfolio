@@ -1,43 +1,43 @@
---- 
+---
 import { experience, type Experience } from "../data/experience-data.ts";
---- 
+---
 
-<section class="py-20 px-4 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text fade-in-section">
-    <h2 class="text-4xl font-bold text-center">
-        Experiencia Profesional
-    </h2>
-    <div class="mt-12 flex flex-col gap-12 max-w-3xl mx-auto">
-        {
-            experience.map((exp: Experience) => (
-                <div class="flex flex-col md:flex-row gap-6">
-                    <div class="md:w-1/4 text-left md:text-right">
-                        <h4 class="font-semibold text-light-accent dark:text-dark-accent">{exp.date}</h4>
-                        <p class="text-sm text-light-secondary dark:text-dark-secondary">{exp.company}</p>
-                    </div>
-                    <div class="md:w-3/4">
-                        <div class="flex items-center gap-4">
-                            <h3 class="text-xl font-bold">{exp.role}</h3>
-                            {exp.url && (
-                                <a href={exp.url} target="_blank" rel="noopener noreferrer" class="text-sm bg-light-accent text-light-bg dark:bg-dark-accent dark:text-dark-bg font-semibold py-1 px-2 rounded hover:opacity-90 transition-colors">
-                                    Ver Sitio
-                                </a>
-                            )}
-                        </div>
-                        <ul class="mt-2 list-disc list-inside flex flex-col gap-1 text-light-secondary dark:text-dark-secondary">
-                            {exp.achievements.map(achievement => (
-                                <li>{achievement}</li>
-                            ))}
-                        </ul>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            {exp.technologies.map((tech) => (
-                                <span class="bg-light-secondary/10 dark:bg-dark-secondary/10 text-xs font-semibold px-2.5 py-1 rounded-full">
-                                    {tech.name}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            ))
-        }
-    </div>
+<section
+  id="experience"
+  class="py-20 px-4 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text animate-on-scroll"
+>
+  <h2 class="text-4xl font-bold text-center">Experiencia</h2>
+  <div class="mt-12 flex flex-col gap-12 max-w-3xl mx-auto">
+    {
+      experience.map((exp: Experience) => (
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/4 text-left md:text-right">
+            <h4 class="font-semibold text-light-accent dark:text-dark-accent">
+              {exp.date}
+            </h4>
+            <p class="text-sm text-light-secondary dark:text-dark-secondary">
+              {exp.company}
+            </p>
+          </div>
+          <div class="md:w-3/4">
+            <div class="flex items-center gap-4">
+              <h3 class="text-xl font-bold">{exp.role}</h3>
+            </div>
+            <ul class="mt-2 list-disc list-inside flex flex-col gap-1 text-light-secondary dark:text-dark-secondary">
+              {exp.achievements.map((achievement) => (
+                <li set:html={achievement} />
+              ))}
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {exp.technologies.map((tech) => (
+                <span class="bg-light-secondary/10 dark:bg-dark-secondary/10 text-xs font-semibold px-2.5 py-1 rounded-full">
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </section>
