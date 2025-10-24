@@ -2,7 +2,10 @@
 import { projects } from "../data/projects.ts";
 ---
 
-<section id="projects" class="py-20 px-4 bg-light-bg dark:bg-dark-bg animate-on-scroll">
+<section
+  id="projects"
+  class="py-20 px-4 bg-light-bg dark:bg-dark-bg animate-on-scroll"
+>
   <h2
     class="text-4xl font-bold text-center text-light-text dark:text-dark-text"
   >
@@ -46,6 +49,7 @@ import { projects } from "../data/projects.ts";
               {project.url && (
                 <a
                   href={project.url}
+                  target="_blank"
                   class="inline-block text-light-accent dark:text-dark-accent font-bold py-2 px-4 rounded hover:scale-110 transition-transform"
                   title="Ir al Proyecto"
                 >
@@ -69,7 +73,7 @@ import { projects } from "../data/projects.ts";
                 </a>
               )}
               {project.github && (
-                <a href={project.github} class="ml-auto">
+                <a href={project.github} target="_blank" class="ml-auto">
                   <img
                     src="icons/github-mark.svg"
                     alt="GitHub"
