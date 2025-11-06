@@ -1,20 +1,46 @@
 <>
-  <header class="bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 py-4 px-6">
+  <header
+    class="bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-sm sticky top-0 z-50 py-4 px-6"
+  >
     <nav class="max-w-5xl mx-auto flex justify-between items-center">
       <a href="/" class="text-2xl font-bold">FP</a>
-      
+
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-6">
-        <a href="#services" class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">Servicios</a>
-        <a href="#featured-projects" class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">Proyectos</a>
-        <a href="#products" class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">Productos</a>
-        <a href="#contact" class="hover:text-light-accent dark:hover:text-dark-accent transition-colors">Contacto</a>
+        <a
+          href="#services"
+          class="hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+          >Servicios</a
+        >
+        <a
+          href="#featured-projects"
+          class="hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+          >Proyectos</a
+        >
+        <a
+          href="#products"
+          class="hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+          >Productos</a
+        >
+        <a
+          href="#contact"
+          class="hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+          >Contacto</a
+        >
       </div>
 
       <!-- Mobile Menu Button -->
       <div id="mobile-menu-button" class="md:hidden cursor-pointer z-60">
-        <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" class="fill-light-text dark:fill-dark-text">
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="28px"
+          viewBox="0 -960 960 960"
+          width="28px"
+          class="fill-light-text dark:fill-dark-text"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          ></path>
         </svg>
       </div>
     </nav>
@@ -22,46 +48,90 @@
 
   <!-- Mobile Menu Panel -->
   <div id="mobile-menu-panel" class="hidden fixed inset-0 z-50">
-    <div class="absolute top-6 right-6 cursor-pointer z-50" id="mobile-menu-close-button">
-      <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" class="fill-light-text dark:fill-dark-text">
-        <path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/>
+    <div
+      class="absolute top-6 right-6 cursor-pointer z-50"
+      id="mobile-menu-close-button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="28px"
+        viewBox="0 -960 960 960"
+        width="28px"
+        class="fill-light-text dark:fill-dark-text"
+      >
+        <path
+          d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"
+        ></path>
       </svg>
     </div>
-    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl">
-      <a href="/" class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors">Inicio</a>
-      <a href="#services" class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors">Servicios</a>
-      <a href="#featured-projects" class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors">Proyectos</a>
-      <a href="#products" class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors">Productos</a>
-      <a href="#contact" class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors">Contacto</a>
+    <div
+      class="flex flex-col items-center justify-center h-full gap-8 text-2xl"
+    >
+      <a
+        href="/"
+        class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+        >Inicio</a
+      >
+      <a
+        href="#services"
+        class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+        >Servicios</a
+      >
+      <a
+        href="#featured-projects"
+        class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+        >Proyectos</a
+      >
+      <a
+        href="#products"
+        class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+        >Productos</a
+      >
+      <a
+        href="#contact"
+        class="mobile-link hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+        >Contacto</a
+      >
     </div>
   </div>
 
   <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
-    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenuCloseButton = document.getElementById(
+      "mobile-menu-close-button"
+    );
+    const mobileMenuPanel = document.getElementById("mobile-menu-panel");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
 
     const closeMobileMenu = () => {
-      mobileMenuPanel.classList.add('hidden');
-      const icon = mobileMenuButton.querySelector('svg path');
-      icon.setAttribute('d', 'M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z'); // Reset to hamburger icon
+      mobileMenuPanel.classList.add("hidden");
+      const icon = mobileMenuButton.querySelector("svg path");
+      icon.setAttribute(
+        "d",
+        "M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+      ); // Reset to hamburger icon
     };
 
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenuPanel.classList.toggle('hidden');
-      const icon = mobileMenuButton.querySelector('svg path');
-      if (!mobileMenuPanel.classList.contains('hidden')) {
-        icon.setAttribute('d', 'M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z');
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenuPanel.classList.toggle("hidden");
+      const icon = mobileMenuButton.querySelector("svg path");
+      if (!mobileMenuPanel.classList.contains("hidden")) {
+        icon.setAttribute(
+          "d",
+          "M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"
+        );
       } else {
-        icon.setAttribute('d', 'M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z');
+        icon.setAttribute(
+          "d",
+          "M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+        );
       }
     });
 
-    mobileMenuCloseButton.addEventListener('click', closeMobileMenu);
+    mobileMenuCloseButton.addEventListener("click", closeMobileMenu);
 
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
     });
   </script>
 
@@ -74,4 +144,3 @@
     }
   </style>
 </>
-
