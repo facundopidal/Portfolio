@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../portfolio/components/Header.astro";
+import Footer from "../portfolio/components/Footer.astro";
+import Hero from "../portfolio/components/Hero.astro";
+import Skills from "../portfolio/components/Skills.astro";
+import Projects from "../portfolio/components/Projects.astro";
+import Experience from "../portfolio/components/Experience.astro";
+import Education from "../portfolio/components/Education.astro";
+---
+
+<BaseLayout title="Facundo Pidal" description="A portfolio of my work">
+  <Header slot="header" />
+  <Hero />
+  <Experience />
+  <Education />
+  <Projects />
+  <Skills />
+  <Footer slot="footer" />
+</BaseLayout>

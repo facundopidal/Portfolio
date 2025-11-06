@@ -1,0 +1,29 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="bg-light-bg dark:bg-dark-bg py-6 px-4 text-center text-light-secondary dark:text-dark-secondary"
+>
+  <div class="flex justify-center gap-4 mb-4">
+    <a
+      href="https://github.com/facundopidal"
+      target="_blank"
+      class="hover:opacity-75 transition-opacity"
+    >
+      <img
+        src="/icons/github-mark.svg"
+        alt="GitHub"
+        class="h-6 w-6 dark:invert"
+      />
+    </a>
+    <a
+      href="https://linkedin.com/in/facundopidal"
+      target="_blank"
+      class="hover:opacity-75 transition-opacity"
+    >
+      <img src="/icons/linkedin.png" alt="LinkedIn" class="h-6 w-6" />
+    </a>
+  </div>
+  <p>&copy; {currentYear} Facundo Pidal. Todos los derechos reservados.</p>
+</footer>

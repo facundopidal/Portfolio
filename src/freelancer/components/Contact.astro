@@ -1,0 +1,70 @@
+---
+
+---
+
+<section
+  id="contact"
+  class="py-20 px-4 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text animate-on-scroll"
+>
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-4xl font-bold">Hablemos</h2>
+    <p class="mt-4 text-xl text-light-secondary dark:text-dark-secondary">
+      ¿Tenés un proyecto en mente? Me encantaría escucharlo.
+    </p>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="mt-12 text-left"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <label class="hidden">
+        Don't fill this out if you're human: <input
+          name="bot-field"
+          type="text"
+        />
+      </label>
+      <div class="mb-6">
+        <label for="name" class="block mb-2 text-sm font-medium">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="bg-light-secondary/10 dark:bg-dark-secondary/10 border border-light-secondary/20 dark:border-dark-secondary/20 text-sm rounded-lg outline-none focus:ring-light-accent focus:border-light-accent block w-full p-2.5"
+          placeholder="Tu nombre"
+        />
+      </div>
+      <div class="mb-6">
+        <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="bg-light-secondary/10 dark:bg-dark-secondary/10 border border-light-secondary/20 dark:border-dark-secondary/20 text-sm rounded-lg outline-none focus:ring-light-accent focus:border-light-accent block w-full p-2.5"
+          placeholder="tu@email.com"
+        />
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block mb-2 text-sm font-medium"
+          >Mensaje</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          class="bg-light-secondary/10 dark:bg-dark-secondary/10 border border-light-secondary/20 dark:border-dark-secondary/20 text-sm rounded-lg outline-none focus:ring-light-accent focus:border-light-accent block w-full p-2.5"
+          placeholder="Cuéntame sobre tu idea..."></textarea>
+      </div>
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-light-accent text-light-bg dark:bg-dark-accent dark:text-dark-bg cursor-pointer font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Enviar Mensaje
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

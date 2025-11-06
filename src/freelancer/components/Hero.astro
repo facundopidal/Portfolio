@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import logoUTN from "@assets/images/logo-utn.png";
+---
+
+<section
+  class="pt-20 pb-10 px-4 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
+>
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-5xl font-bold">Facundo Pidal</h1>
+    <p class="mt-4 text-xl text-light-secondary dark:text-dark-secondary">
+      Desarrollador Web & Aplicaciones Windows
+    </p>
+    <p class="mt-8 max-w-2xl mx-auto">
+      Transformo tus ideas en aplicaciones web modernas y funcionales.
+            Especializado en el desarrollo de soluciones a medida para instituciones, startups y pequeños negocios.
+          </p>
+    <div class="mt-8">
+      <a
+        href="#contact"
+        class="bg-light-accent text-light-bg dark:bg-dark-accent dark:text-dark-bg font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Contactame
+      </a>
+    </div>
+    <div
+      class="mt-12 mx-auto bg-light-secondary/10 dark:bg-dark-secondary/10 p-2 px-4 rounded-lg inline-block"
+    >
+      <div
+        class="text-lg text-light-secondary/80 dark:text-dark-secondary/80 flex"
+      >
+        <Image
+          src={logoUTN}
+          alt="Logo de la Universidad Tecnológica Nacional"
+          class="h-8 w-auto mr-2 dark:invert"
+        />
+        <span>Técnico Universitario en Programación</span>
+      </div>
+    </div>
+  </div>
+</section>

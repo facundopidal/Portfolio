@@ -1,16 +1,20 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import Skills from "../components/Skills.astro";
-import Projects from "../components/Projects.astro";
-import Experience from "../components/Experience.astro";
-import Education from "../components/Education.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../freelancer/components/Header.astro';
+import Hero from '../freelancer/components/Hero.astro';
+import Services from '../freelancer/components/Services.astro';
+import FeaturedProjects from '../freelancer/components/FeaturedProjects.astro';
+import Products from '../freelancer/components/Products.astro';
+import Contact from '../freelancer/components/Contact.astro';
+import Footer from '../freelancer/components/Footer.astro';
 ---
 
-<BaseLayout title="Facundo Pidal" description="A portfolio of my work">
+<BaseLayout title="Facundo Pidal - Freelancer" description="Portfolio de freelancer de Facundo Pidal">
+  <Header slot="header" />
   <Hero />
-  <Experience />
-  <Education />
-  <Projects />
-  <Skills />
+  <Services />
+  <FeaturedProjects />
+  <Products />
+  <Contact />
+  <Footer slot="footer" />
 </BaseLayout>
