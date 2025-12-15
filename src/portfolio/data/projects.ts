@@ -35,7 +35,7 @@ export const projects: Project[] = [
       { id: "postgres", name: "PostgreSQL" },
       { id: "docker", name: "Docker" },
     ],
-    image: "images/noteapp.png", // Placeholder image
+    image: "/images/noteapp.png", // Placeholder image
     url: "https://noteapp-facundopidal.netlify.app",
     github: "https://github.com/facundopidal/NoteApp",
   },
@@ -52,7 +52,7 @@ export const projects: Project[] = [
       { id: "node", name: "Node.js" },
       { id: "express", name: "Express" },
     ],
-    image: "images/suplymardel.jpg",
+    image: "/images/suplymardel.jpg",
     github: "https://github.com/facundopidal/ProyectoLab4-SuplyMardel",
   },
   {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       { id: "tauri", name: "Tauri" },
       { id: "sqlite", name: "SQLite" },
     ],
-    image: "images/gestor.jpg",
+    image: "/images/gestor.jpg",
     github: "https://github.com/facundopidal/Gestor-de-gastos-tauri",
   },
 ];
