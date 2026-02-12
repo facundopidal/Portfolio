@@ -4,9 +4,10 @@ import "../styles/global.css";
 export interface Props {
   title: string;
   description: string;
+  icon?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, icon = "/favicon.svg" } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,7 +16,7 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={icon} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script is:inline>
@@ -40,9 +41,8 @@ const { title, description } = Astro.props;
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-8P5B008XGB"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P5B008XGB"
+    ></script>
     <script>
       // @ts-ignore
       window.dataLayer = window.dataLayer || [];

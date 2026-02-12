@@ -1,0 +1,164 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import { readdir } from "node:fs/promises";
+
+let downloadUrl = null;
+let buttonText = "Descargar Ahora";
+let buttonClass =
+  "inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-lg transition text-xl";
+
+try {
+  const files = await readdir("public");
+  const msiFile = files.find(
+    (file) => file.endsWith(".msi") && file.startsWith("Multi WhatsApp"),
+  );
+
+  if (msiFile) {
+    downloadUrl = `/${msiFile}`;
+  } else {
+    downloadUrl = "#"; // No file found
+    buttonText = "No disponible";
+    buttonClass =
+      "inline-block bg-gray-500 text-white font-semibold py-3 px-8 rounded-lg transition text-xl cursor-not-allowed";
+  }
+} catch (error) {
+  console.error("Error reading public directory:", error);
+  downloadUrl = "#"; // Error occurred
+  buttonText = "Error al cargar";
+  buttonClass =
+    "inline-block bg-red-500 text-white font-semibold py-3 px-8 rounded-lg transition text-xl cursor-not-allowed";
+}
+---
+
+<BaseLayout
+  title="Descargar MultiWhatsApp"
+  description="Página de descarga de Multi WhatsApp, la aplicación para gestionar múltiples cuentas de WhatsApp en Windows."
+  icon="/multi.png"
+>
+  <main class="bg-[#0f0f0f]">
+    <section class="mx-auto max-w-3xl px-6 py-16 text-center">
+      <div
+        class="mb-12 rounded-xl border border-emerald-700/20 bg-neutral-900 p-8"
+      >
+        <h1 class="gradient-text mb-6 leading-normal">
+          Descargar Multi WhatsApp
+        </h1>
+        <p class="mb-8 text-lg text-gray-300">
+          ¡Gracias por tu interés en Multi WhatsApp! Haz clic en el botón de
+          abajo para descargar la última versión. Asegúrate de cumplir con los
+          requisitos del sistema.
+        </p>
+        <a
+          id="download-button"
+          href={downloadUrl}
+          class={buttonClass}
+          download={downloadUrl !== "#"}
+        >
+          {buttonText}
+        </a>
+      </div>
+
+      <div class="mb-12 text-left">
+        <h2 class="mb-4 text-2xl font-semibold text-emerald-400">
+          Instrucciones de Instalación
+        </h2>
+        <ol class="list-inside list-decimal space-y-2 text-gray-300">
+          <li>
+            Descarga el archivo instalador (.msi) haciendo clic en el botón de
+            arriba.
+          </li>
+          <li>
+            Una vez descargado, ejecuta el archivo y sigue las instrucciones en
+            pantalla.
+          </li>
+          <li>
+            Si Windows SmartScreen te advierte, haz clic en "Más información" y
+            luego en "Ejecutar de todos modos".
+          </li>
+          <li>
+            Una vez instalado, abre la aplicación, coloca tu licencia y comienza
+            a gestionar tus cuentas de WhatsApp.
+          </li>
+        </ol>
+      </div>
+
+      <div class="mb-12 text-left">
+        <h2 class="mb-4 text-2xl font-semibold text-emerald-400">
+          Requisitos del Sistema
+        </h2>
+        <p class="mb-4 text-gray-300">
+          Los requisitos de sistema pueden variar según la cantidad de cuentas
+          de WhatsApp que uses. Aquí una guía:
+        </p>
+        <ul class="list-inside list-disc space-y-2 text-gray-300">
+          <li>
+            <b>Sistema Operativo:</b>
+            Windows 10 o superior (64-bit)
+          </li>
+          <li>
+            <b>Espacio en Disco:</b>
+            <ul class="list-inside list-circle ml-4">
+              <li>Aplicación base: ~13 MB</li>
+              <li>
+                Por cada cuenta de WhatsApp: ~200 MB adicionales (para datos de
+                sesión)
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Memoria RAM:</b>
+            <ul class="list-inside list-circle ml-4">
+              <li>Mínimo: 4 GB (para 2-4 cuentas)</li>
+              <li>Recomendado: 8 GB o más (para 5 o más cuentas)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      class="container mx-auto px-4 py-8 text-center text-gray-400 text-sm"
+    >
+      <p>
+        Esta aplicación es una solución no oficial y no está afiliada ni
+        respaldada por WhatsApp LLC. El uso de aplicaciones de terceros puede
+        conllevar un mínimo riesgo de bloqueo temporal o permanente de tu cuenta
+        de WhatsApp. Utilízala bajo tu propia responsabilidad.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 text-sm">
+      <a href="">
+        <img
+          src="/multi.png"
+          alt="Multi WhatsApp Logo"
+          class="mx-auto h-10 mb-4"
+        />
+      </a>
+      © {new Date().getFullYear()} Multi WhatsApp. Desarrollado por Facundo Pidal.
+      <nav class="mt-4">
+        <ul class="flex justify-center gap-4">
+          <li>
+            <a href="/" class="text-gray-500 hover:text-gray-700">Inicio</a>
+          </li>
+          <li>
+            <a href="/contacto" class="text-gray-500 hover:text-gray-700">
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </main>
+</BaseLayout>
+
+<style>
+  .gradient-text {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #0f9, #1affb2);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+  }
+</style>
