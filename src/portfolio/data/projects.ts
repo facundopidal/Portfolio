@@ -36,7 +36,6 @@ export const projects: Project[] = [
       { id: "docker", name: "Docker" },
     ],
     image: "/images/noteapp.png", // Placeholder image
-    url: "https://noteapp-facundopidal.netlify.app",
     github: "https://github.com/facundopidal/NoteApp",
   },
   {
